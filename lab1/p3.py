@@ -1,7 +1,7 @@
 while True:
     print("Enter an integer:", end=" ")
     rows = int(input())
-    if rows == 0:
+    if rows == 0 or rows < 0:
         break
     print("Enter a string:", end=" ")
     out = str(input())
