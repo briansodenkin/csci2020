@@ -5,7 +5,7 @@ prev_cred = 0
 while True:
     gpa = input()
     if gpa == 'exit':
-        print('Program ends')
+        print('Program ends.')
         break
     gpa = gpa.split()
     current = float(gpa[0])
