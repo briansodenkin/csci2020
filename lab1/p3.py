@@ -5,7 +5,7 @@ while True:
         break
     print("Enter a string:", end=" ")
     string = str(input())
-    for i in range(0, rows_num):
+    for i in range(1, rows_num+1):
         for j in range(rows_num, 0, -1):
             if j > i:
                 # print number of space according to the string length
