@@ -3,8 +3,8 @@ import math
 def check_invalid(triangle):
     if triangle[0] > 0 and triangle[1] > 0 and triangle[2] > 0:
         if triangle[0]+triangle[1]> triangle[2] and triangle[1]+triangle[2]>triangle[0] and triangle[2]+triangle[0]>triangle[1]:
-            return True
-    return False
+            return False
+    return True
 
 def is_obtuse_triangle(triangle):
     a = triangle[0]**2
