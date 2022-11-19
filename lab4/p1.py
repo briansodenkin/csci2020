@@ -59,12 +59,24 @@ class RPNCalculator(CalculatorEngine):
         # your code here
         super().__init__()
 
+    def doModulo(self):
+        try:
+            self.performBinary(lambda x, y: x % y)
+        except ZeroDivisionError:
+            print("divide by 0!")
+            exit(1)
+    
+    def doTextOp(self, op):
+        if (op == '%'): self.doModulo()
+        return super().doTextOp(op)
+
     def eval(self, line):
         # your code here
+        line = line.split(' ')
         for word in line:
-            if word != '+' and word != '-' and word != '*' and word != '/' and word != ' ':
-                self.pushOperand(word)
+            if word != '+' and word != '-' and word != '*' and word != '/' and word != '%':
+                self.pushOperand(int(word))
             else:
-                self.pushOperand(self.doTextOp(word))
+                self.doTextOp(word)
         return self.currentOperand()
                 
