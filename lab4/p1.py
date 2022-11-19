@@ -74,7 +74,7 @@ class RPNCalculator(CalculatorEngine):
         # your code here
         line = line.split(' ')
         for word in line:
-            if word != '+' and word != '-' and word != '*' and word != '/' and word != '%':
+            if word.isnumeric():
                 self.pushOperand(int(word))
             else:
                 self.doTextOp(word)
